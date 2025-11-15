@@ -1,16 +1,201 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📘 Smart Recipe Generator — Frontend (React)
 
-Currently, two official plugins are available:
+AI-powered recipe suggestion UI based on ingredients, dietary preferences, and smart matching.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Overview
 
-## React Compiler
+This is the frontend-only part of the Smart Recipe Generator project.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The application allows users to:
 
-## Expanding the ESLint configuration
+Enter ingredients manually
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Upload ingredient photos
+
+Detect ingredients using AI (via backend API)
+
+Get recipe suggestions with match score
+
+View full recipe details (steps, nutrition, time, difficulty)
+
+Save recipes locally
+
+Apply filters (difficulty, cook time, diet)
+
+Browse saved recipes
+
+The frontend is fully responsive, modern, and built using React + Vite.
+
+⚠️ Note:
+This frontend connects to a backend (API). The backend must run separately.
+
+🎯 Frontend Features
+🔍 Ingredient Input
+
+Text input mode
+
+Photo upload mode
+
+Automatic ingredient detection
+
+Popular ingredient suggestions
+
+Dietary options (veg, vegan, gluten-free)
+
+🍳 Recipe Results
+
+Displays match score (%)
+
+Recipe cards with metadata
+
+Quick view of ingredients
+
+Sort by:
+
+Match score
+
+Time
+
+Difficulty
+
+📘 Recipe Detail Page
+
+Full instructions
+
+Nutrition info
+
+Image
+
+Save recipe
+
+Share recipe
+
+❤️ Saved Recipes
+
+Saved locally using LocalStorage
+
+View saved recipes anytime
+
+Remove saved recipes
+
+Suggested recipes based on saved items
+
+🏗️ Folder Structure
+frontend/
+├── src/
+│   ├── api/
+│   │   └── api.js               # Backend API calls
+│   │
+│   ├── components/
+│   │   ├── ImageUploader.jsx
+│   │   ├── RecipeCard.jsx
+│   │   └── NutritionCard.jsx
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── IngredientInput.jsx
+│   │   ├── RecipeResults.jsx
+│   │   ├── RecipeDetail.jsx
+│   │   └── SavedRecipes.jsx
+│   │
+│   ├── styles/
+│   │   ├── colors.css
+│   │   └── layout.css
+│   │
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── index.html
+├── package.json
+└── README.md
+
+🎨 UI Design Highlights
+
+Clean, modern layout
+
+Mobile-responsive
+
+Hero section
+
+Smooth transitions
+
+Card-based recipe layout
+
+AI image detection UI
+
+🧩 Tech Stack
+🔹 Framework
+
+React 18
+
+Vite
+
+🔹 Libraries
+
+Axios
+
+Lucide-react icons
+
+CSS custom properties (for theme colors)
+
+⚙️ Installation (Frontend Only)
+1️⃣ Install dependencies
+npm install
+
+2️⃣ Start frontend
+npm run dev
+
+Default URL:
+http://localhost:5173
+
+🔌 Connecting to Backend
+
+Edit:
+
+src/api/api.js
+export const API_BASE = "http://localhost:5000/api";
+
+
+This connects all frontend pages to backend endpoints:
+
+Purpose	Endpoint
+Ingredient detection	/image/recognize
+Search recipes	/recipes/search
+Get recipe details	/recipes/:id
+Save recipe	/user/save
+Get saved recipes	/user/saved
+🌐 Deployment (Frontend Only)
+Deploy to:
+✔ Netlify
+
+OR
+
+✔ Vercel
+Vite build command:
+npm run build
+
+
+Build output:
+
+/dist
+
+
+Upload /dist to Netlify or deploy with Vercel CLI.
+
+🧪 Testing (Frontend)
+
+Check ingredient input
+
+Test image upload → ingredient detection
+
+Verify recipe results populate
+
+Open recipe detail
+
+Save recipe
+
+Check saved recipes page
+
+Test responsiveness (mobile view
